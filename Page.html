@@ -1,0 +1,246 @@
+<html> 
+    <nav>
+        <h2>Mon site</h2>
+        <ul>
+            <li><a href="Page.html">Accueil</a></li>
+            <li><a href="about.html">À propos de moi</a></li>
+            <li><a href="contact.html">me parler</a></li>
+        </ul>
+    </nav>
+
+    <head>
+        <title>BIOJ.com</title>
+        <style>
+            body {
+                margin: 0;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 20px;
+                background-image: url("https://imgs.search.brave.com/hMqJpU2FTrgZHFdMN9th60_HXEpDNEEPhUbs6ru5b_k/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50LnBleGVscy5j/b20vaW1hZ2VzL2Nh/bnZhL2FpLWdlbmVy/YXRlZC1hZC9vZmYt/dGhlbWUvaGlnaF9h/bHRpdHVkZV9hZXJp/YWxfdmlld19hYm92/ZV9jb3R0b25fc29m/dF9jbG91ZF90b3Bz/X2dsb3dpbmdfaW5f/Z29sZGVuX2hvdXJf/bGlnaHQtZnVsbC5q/cGc");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background: #ffd90000;
+                color: rgb(0, 0, 0);
+            }
+
+            nav ul {
+                list-style: none;
+                display: flex;
+                gap: 15px;
+            }
+
+            nav a {
+                color: rgb(0, 0, 0);
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            nav a:hover {
+                text-decoration: underline;
+            }
+
+            .card-title {
+                width: 250px;
+                height: 100px;
+                background-color: rgba(0, 0, 0, 0.7);
+                padding: 20px;
+                border-radius: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
+                color: white;
+                box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            }
+
+            .card-for-rows {
+                width: 200px;
+                height: 10.5vh;
+                background-color: rgba(0, 0, 0, 0.7);
+                padding: 20px;
+                border-radius: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
+                color: white;
+                box-sizing: border-box;
+                box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            }
+
+            .card-for-image {
+                width: 180px;
+                height: 180px;
+                background-color: rgba(0, 0, 0, 0.7);
+                padding: 20px;
+                border-radius: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
+                color: white;
+                box-sizing: border-box;
+                box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            }
+
+            .table {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 25vh;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.7);
+                padding: 20px;
+                display: flex;
+                align-items: flex-start;
+                color: white;
+                box-shadow: 0 0 20px rgba(0,0,0,0.150);
+            }
+
+            .grid-layout {
+                display: grid;
+                grid-template-columns: 200px 200px 180px;
+                grid-template-rows: auto auto;
+                gap: 20px;
+                align-items: center;
+            }
+
+            .grosTexte {
+                font-size: 30px;
+                margin-bottom: 10px;
+            }
+
+            .textZone {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+
+            .image-container {
+                position: relative;
+                display: block;
+            }
+
+            .image-container img {
+                width: 140px;
+                height: 140px;
+            }
+
+            .fullscreen-btn {
+                position: absolute;
+                top: 2px;
+                right: 2px;
+                padding: 5px 8px;
+                font-size: 14px;
+                background-color: rgba(0, 0, 0, 0.6);
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .ButtonConsole {
+                padding: 10px 20px;
+                font-size: 16px;
+                width: 100%;
+                height: 100%;
+                background-color: green;
+                color: white;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+
+            .ButtonStudioXP {
+                padding: 10px 20px;
+                font-size: 16px;
+                width: 100%;
+                height: 120%;
+                background-color: blue;
+                color: red;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+
+            .ButtonStudioXP:hover {
+                background-color: rgb(133, 10, 150);
+                color: rgb(255, 251, 0);
+            }
+
+            .ButtonConsole:hover {
+                background-color: rgb(25, 206, 197);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="card-title">
+            <h1 class="grosTexte">Nom du site je suppose!</h1>
+            <p class="textZone">je sais pas quoi y mettre mais c'est une zone de texte</p>
+        </div>
+
+        <div class="grid-layout">
+
+            <div class="card-for-rows">
+                c'est ici que j'ai appris à coder en 1er, là où tout a commencé.
+            </div>
+
+            <div class="card-for-rows">
+                <button class="ButtonStudioXP" onclick="window.location.href='https://www.studioxp.online/fr-fr/'">
+                    StudioXP
+                </button>
+            </div>
+
+            <div class="card-for-image" style="grid-row: span 2;">
+                <div class="image-container">
+                    <img id="monImage" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb">
+                    <button class="fullscreen-btn" onclick="pleinEcran()">⛶</button>
+                </div>
+            </div>
+
+            <div class="card-for-rows">
+                c'est bon, c'est en dessous?
+            </div>
+
+            <div class="card-for-rows">
+                et ça se décale au bon endroit?
+            </div>
+
+        </div>
+
+        <div class="table">
+            ici ce sera la page de présentation, donc un peu l'accueil, mais je sais toujours pas quoi en faire, donc je continue de faire de la mise en forme.
+            le but, c'est surtout d'apprendre à coder ces trucs là, pour ensuite créer un site viable, mais c'est pas pour l'instant.
+        </div>
+
+        <script>
+            function pleinEcran() {
+                let img = document.getElementById("monImage");
+                if (img.requestFullscreen) {
+                    img.requestFullscreen();
+                } else if (img.webkitRequestFullscreen) {
+                    img.webkitRequestFullscreen();
+                } else if (img.msRequestFullscreen) {
+                    img.msRequestFullscreen();
+                }
+            }
+        </script>
+    </body>
+</html>

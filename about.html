@@ -1,0 +1,144 @@
+<html>
+    <head>
+        <nav>
+            <h2>
+                Mon site
+            </h2>
+
+            <ul>
+                <li>
+                    <a href="Page.html">Accueil</a>
+                </li>
+
+                <li>
+                    <a href="about.html">À propos de moi </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">me parler</a>
+                </li>
+            </ul>
+        </nav>
+    <title>BIOJ.com</title>
+
+    <style>
+        body {
+                margin: 0;
+                height: 100vh;
+
+                display: flex;
+                flex-direction: column;
+
+                align-items: center;
+                justify-content: flex-start;
+
+                gap: 20px;
+
+                background-image: url("https://i0.wp.com/picjumbo.com/wp-content/uploads/glowing-abstract-lines-wallpaper-free-image.jpg?w=600&quality=80");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffd90000;
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .row {
+                display: flex;
+                gap: 20px;
+            }
+
+        .container {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            width: 250px;
+
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 15px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            text-align: center;
+            color: white;
+
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .table {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 250px;
+            height: 100vh;
+
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+
+            display: flex;
+            align-items: flex-start;
+
+            color: white;
+
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+            h1 {
+                margin-bottom: 15px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="card">
+                <h1>À propos de moi</h1>
+
+                <p>
+                    Vous voilà sur ma page de présentation, donc je vais expliquer ce que je fais là.
+                </p>
+
+                <p>
+                    J'ai 15 ans, en 2nde au lycée et je m’intéresse au développement, donc je crée des petits projets comme celui-ci pour progresser.
+                </p>
+
+                <p>
+                    Je code car j'aime ça, c'est une passion, mais j'aime aussi coder pour que ça serve à quelque chose.
+                </p>
+
+                <p>
+                    Or en ce moment, je ne sais pas quoi faire de mon site, donc si vous avez des idées, n'hésitez pas à me les dire, que ce soit pour le design ou pour le contenu.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
