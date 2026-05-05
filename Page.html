@@ -2,9 +2,10 @@
     <nav>
         <h2>Mon site</h2>
         <ul>
-            <li><a href="Page.html">Accueil</a></li>
+            <li><a href="Page.html">Apprentissage</a></li>
             <li><a href="about.html">À propos de moi</a></li>
             <li><a href="contact.html">me parler</a></li>
+            <li><a href="essai vidéos.html">NetflixLOL</a></li>
         </ul>
     </nav>
 
@@ -47,6 +48,75 @@
 
             nav a:hover {
                 text-decoration: underline;
+            }
+
+            .netflix-row {
+                /* ✅ MODIF : occupe toutes les colonnes de la grille */
+                grid-column: 1 / -1;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .netflix-title {
+                color: white;
+                font-size: 16px;
+                font-weight: bold;
+                margin-bottom: 8px;
+                text-shadow: 0 0 8px rgba(0,0,0,0.8);
+            }
+
+            .strip-wrapper {
+                position: relative;
+                display: flex;
+                align-items: center;
+            }
+
+            .strip {
+                display: flex;
+                gap: 10px;
+                overflow-x: auto;
+                scroll-behavior: smooth;
+                scrollbar-width: none;
+                padding: 4px 2px;
+            }
+
+            .strip::-webkit-scrollbar {
+                display: none;
+            }
+
+            .strip-card {
+                flex: 0 0 150px;
+                height: 80px;
+                background-color: rgba(0, 0, 0, 0.7);
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 14px;
+                cursor: pointer;
+                transition: transform 0.2s;
+                box-shadow: 0 0 10px rgba(0,0,0,0.4);
+            }
+
+            .strip-card:hover {
+                transform: scale(1.07);
+            }
+
+            .arrow {
+                background-color: rgba(0, 0, 0, 0.6);
+                color: white;
+                border: none;
+                font-size: 24px;
+                padding: 5px 10px;
+                cursor: pointer;
+                border-radius: 5px;
+                z-index: 1;
+                flex-shrink: 0;
+            }
+
+            .arrow:hover {
+                background-color: rgba(0, 0, 0, 0.9);
             }
 
             .card-title {
@@ -197,7 +267,6 @@
         </div>
 
         <div class="grid-layout">
-
             <div class="card-for-rows">
                 c'est ici que j'ai appris à coder en 1er, là où tout a commencé.
             </div>
@@ -210,17 +279,34 @@
 
             <div class="card-for-image" style="grid-row: span 2;">
                 <div class="image-container">
-                    <img id="monImage" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb">
+                    <img id="monImage" src="https://imgs.search.brave.com/DbhSU2UrA8OseY6Y4S5Fs8Tlam8rqdvCppDSaJQJBLA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cHJvbW9jb2RpZS5j/b20vY2NzaW1nL2Rj/cy9pbWdfdG9vbHMv/ZGNzX2ltZ19iNGIx/ZGY1NWI0MGU1Y2Zh/NzZhYjI2ZmQ0OGI2/NDg0Ni53ZWJw">
                     <button class="fullscreen-btn" onclick="pleinEcran()">⛶</button>
                 </div>
             </div>
 
             <div class="card-for-rows">
-                c'est bon, c'est en dessous?
+                Si vous ne savez pas par où commencer, vous avez une idée maintenant!
             </div>
 
             <div class="card-for-rows">
-                et ça se décale au bon endroit?
+                Les cours sont purement géniaux.
+            </div>
+
+            <div class="netflix-row">
+                <div class="netflix-title">Ma sélection</div>
+                <div class="strip-wrapper">
+                    <button class="arrow arrow-left" onclick="scrollStrip(-1)">&#8249;</button>
+                    <div class="strip" id="maStrip">
+                        <div class="strip-card">Projet 1</div>
+                        <div class="strip-card">Projet 2</div>
+                        <div class="strip-card">Projet 3</div>
+                        <div class="strip-card">Projet 4</div>
+                        <div class="strip-card">Projet 5</div>
+                        <div class="strip-card">Projet 6</div>
+                        <div class="strip-card">Projet 7</div>
+                    </div>
+                    <button class="arrow arrow-right" onclick="scrollStrip(1)">&#8250;</button>
+                </div>
             </div>
 
         </div>
@@ -231,6 +317,13 @@
         </div>
 
         <script>
+            function scrollStrip(dir) {
+                document.getElementById("maStrip").scrollBy({
+                left: dir * 300,
+                behavior: "smooth"
+                });
+            }
+
             function pleinEcran() {
                 let img = document.getElementById("monImage");
                 if (img.requestFullscreen) {
