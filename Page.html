@@ -2,10 +2,18 @@
     <nav>
         <h2>Mon site</h2>
         <ul>
-            <li><a href="Page.html">Apprentissage</a></li>
-            <li><a href="about.html">À propos de moi</a></li>
-            <li><a href="contact.html">me parler</a></li>
-            <li><a href="essai vidéos.html">NetflixLOL</a></li>
+            <li>
+                <a href="Page.html">Apprentissage</a>
+            </li>
+            <li>
+                <a href="about.html">À propos de moi</a>
+            </li>
+            <li>
+                <a href="contact.html">me parler</a>
+            </li>
+            <li>
+                <a href="essai vidéos.html">Netflix</a>
+            </li>
         </ul>
     </nav>
 
@@ -51,7 +59,6 @@
             }
 
             .netflix-row {
-                /* ✅ MODIF : occupe toutes les colonnes de la grille */
                 grid-column: 1 / -1;
                 width: 100%;
                 margin-top: 10px;
@@ -291,24 +298,6 @@
             <div class="card-for-rows">
                 Les cours sont purement géniaux.
             </div>
-
-            <div class="netflix-row">
-                <div class="netflix-title">Ma sélection</div>
-                <div class="strip-wrapper">
-                    <button class="arrow arrow-left" onclick="scrollStrip(-1)">&#8249;</button>
-                    <div class="strip" id="maStrip">
-                        <div class="strip-card">Projet 1</div>
-                        <div class="strip-card">Projet 2</div>
-                        <div class="strip-card">Projet 3</div>
-                        <div class="strip-card">Projet 4</div>
-                        <div class="strip-card">Projet 5</div>
-                        <div class="strip-card">Projet 6</div>
-                        <div class="strip-card">Projet 7</div>
-                    </div>
-                    <button class="arrow arrow-right" onclick="scrollStrip(1)">&#8250;</button>
-                </div>
-            </div>
-
         </div>
 
         <div class="table">
@@ -317,13 +306,6 @@
         </div>
 
         <script>
-            function scrollStrip(dir) {
-                document.getElementById("maStrip").scrollBy({
-                left: dir * 300,
-                behavior: "smooth"
-                });
-            }
-
             function pleinEcran() {
                 let img = document.getElementById("monImage");
                 if (img.requestFullscreen) {

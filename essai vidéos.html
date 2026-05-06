@@ -1,4 +1,4 @@
-<html>
+<html> 
     <nav>
         <h2>Mon site</h2>
         <ul>
@@ -10,8 +10,22 @@
     </nav>
 
     <head>
-        <title>Vidéos</title>
+        <title>BIOJ.com</title>
         <style>
+            body {
+                margin: 0;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 20px;
+                background-image: url("https://imgs.search.brave.com/hMqJpU2FTrgZHFdMN9th60_HXEpDNEEPhUbs6ru5b_k/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50LnBleGVscy5j/b20vaW1hZ2VzL2Nh/bnZhL2FpLWdlbmVy/YXRlZC1hZC9vZmYt/dGhlbWUvaGlnaF9h/bHRpdHVkZV9hZXJp/YWxfdmlld19hYm92/ZV9jb3R0b25fc29m/dF9jbG91ZF90b3Bz/X2dsb3dpbmdfaW5f/Z29sZGVuX2hvdXJf/bGlnaHQtZnVsbC5q/cGc");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
             nav {
                 display: flex;
                 justify-content: space-between;
@@ -35,10 +49,322 @@
             nav a:hover {
                 text-decoration: underline;
             }
+
+            .netflix-row {
+                grid-column: 1 / -1;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .netflix-title {
+                color: white;
+                font-size: 16px;
+                font-weight: bold;
+                margin-bottom: 8px;
+                text-shadow: 0 0 8px rgba(0,0,0,0.8);
+            }
+
+            .strip-wrapper {
+                position: relative;
+                display: flex;
+                align-items: center;
+            }
+
+            .strip {
+                display: flex;
+                gap: 10px;
+                overflow-x: auto;
+                scroll-behavior: smooth;
+                scrollbar-width: none;
+                padding: 4px 2px;
+            }
+
+            .strip::-webkit-scrollbar {
+                display: none;
+            }
+
+            .strip-card {
+                flex: 0 0 200px;
+                height: 130px;
+                background-color: rgba(0, 0, 0, 0.7);
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 14px;
+                cursor: pointer;
+                transition: transform 0.2s;
+                box-shadow: 0 0 10px rgba(0,0,0,0.4);
+                position: relative;
+                overflow: hidden;
+            }
+
+            .strip-card:hover {
+                transform: scale(1.07);
+            }
+
+            .strip-card video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+
+            .strip-card .fullscreen-btn {
+                position: absolute;
+                top: 4px;
+                right: 4px;
+                padding: 3px 7px;
+                font-size: 13px;
+                background-color: rgba(0, 0, 0, 0.6);
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                z-index: 2;
+            }
+
+            .strip-card .fullscreen-btn:hover {
+                background-color: rgba(0, 0, 0, 0.9);
+            }
+
+            .arrow {
+                background-color: rgba(0, 0, 0, 0.6);
+                color: white;
+                border: none;
+                font-size: 24px;
+                padding: 5px 10px;
+                cursor: pointer;
+                border-radius: 5px;
+                z-index: 1;
+                flex-shrink: 0;
+            }
+
+            .arrow:hover {
+                background-color: rgba(0, 0, 0, 0.9);
+            }
+
+            .card-title {
+                width: 250px;
+                height: 100px;
+                background-color: rgba(0, 0, 0, 0.7);
+                padding: 20px;
+                border-radius: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
+                color: white;
+                box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            }
+
+            .card-for-rows {
+                width: 200px;
+                height: 10.5vh;
+                background-color: rgba(0, 0, 0, 0.7);
+                padding: 20px;
+                border-radius: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
+                color: white;
+                box-sizing: border-box;
+                box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            }
+
+            .card-for-image {
+                width: 180px;
+                height: 180px;
+                background-color: rgba(0, 0, 0, 0.7);
+                padding: 20px;
+                border-radius: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
+                color: white;
+                box-sizing: border-box;
+                box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            }
+
+            .table {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 25vh;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.7);
+                padding: 20px;
+                display: flex;
+                align-items: flex-start;
+                color: white;
+                box-shadow: 0 0 20px rgba(0,0,0,0.150);
+            }
+
+            .grid-layout {
+                display: grid;
+                grid-template-columns: 200px 200px 180px;
+                grid-template-rows: auto auto;
+                gap: 20px;
+                align-items: center;
+            }
+
+            .grosTexte {
+                font-size: 30px;
+                margin-bottom: 10px;
+            }
+
+            .textZone {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+
+            .image-container {
+                position: relative;
+                display: block;
+            }
+
+            .image-container img {
+                width: 140px;
+                height: 140px;
+            }
+
+            .fullscreen-btn {
+                position: absolute;
+                top: 2px;
+                right: 2px;
+                padding: 5px 8px;
+                font-size: 14px;
+                background-color: rgba(0, 0, 0, 0.6);
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
         </style>
     </head>
 
     <body>
+        <div class="grid-layout">
+            <div class="netflix-row">
+                <div class="netflix-title">Game of Thrones</div>
+                <div class="strip-wrapper">
+                    <button class="arrow arrow-left" onclick="scrollStrip(-1)">&#8249;</button>
+                    <div class="strip" id="maStrip">
+                        <div class="strip-card">
+                            <video id="video1" controls><source src="projet1.mp4" type="video/mp4"></video>
+                            <button class="fullscreen-btn" onclick="pleinEcranVideo('video1')">⛶</button>
+                        </div>
+                        <div class="strip-card">
+                            <video id="video2" controls><source src="projet2.mp4" type="video/mp4"></video>
+                            <button class="fullscreen-btn" onclick="pleinEcranVideo('video2')">⛶</button>
+                        </div>
+                        <div class="strip-card">
+                            <video id="video3" controls><source src="projet3.mp4" type="video/mp4"></video>
+                            <button class="fullscreen-btn" onclick="pleinEcranVideo('video3')">⛶</button>
+                        </div>
+                        <div class="strip-card">
+                            <video id="video4" controls><source src="projet4.mp4" type="video/mp4"></video>
+                            <button class="fullscreen-btn" onclick="pleinEcranVideo('video4')">⛶</button>
+                        </div>
+                        <div class="strip-card">
+                            <video id="video5" controls><source src="projet5.mp4" type="video/mp4"></video>
+                            <button class="fullscreen-btn" onclick="pleinEcranVideo('video5')">⛶</button>
+                        </div>
+                        <div class="strip-card">
+                            <video id="video6" controls><source src="projet6.mp4" type="video/mp4"></video>
+                            <button class="fullscreen-btn" onclick="pleinEcranVideo('video6')">⛶</button>
+                        </div>
+                        <div class="strip-card">
+                            <video id="video7" controls><source src="projet7.mp4" type="video/mp4"></video>
+                            <button class="fullscreen-btn" onclick="pleinEcranVideo('video7')">⛶</button>
+                        </div>
+                    </div>
+                    <button class="arrow arrow-right" onclick="scrollStrip(1)">&#8250;</button>
+                </div>
+            </div>
+        </div>
 
+        <div class="grid-layout">
+            <div class="netflix-row">
+                <div class="netflix-title">Wemmbu, Kings Arc</div>
+                <div class="strip-wrapper">
+                    <button class="arrow arrow-left" onclick="scrollStrip(-1)">&#8249;</button>
+                    <div class="strip" id="maStrip">
+                        <div class="strip-card">
+                            <video id="video1" controls><source src="Kings Arc 1.mp4" type="video/mp4"></video>
+                            <button class="fullscreen-btn" onclick="pleinEcranVideo('video1')">⛶</button>
+                        </div>
+                        <div class="strip-card">
+                            <video id="video2" controls><source src="Kings Arc 2.mp4" type="video/mp4"></video>
+                            <button class="fullscreen-btn" onclick="pleinEcranVideo('video2')">⛶</button>
+                        </div>
+                        <div class="strip-card">
+                            <video id="video3" controls><source src="projet3.mp4" type="video/mp4"></video>
+                            <button class="fullscreen-btn" onclick="pleinEcranVideo('video3')">⛶</button>
+                        </div>
+                        <div class="strip-card">
+                            <video id="video4" controls><source src="projet4.mp4" type="video/mp4"></video>
+                            <button class="fullscreen-btn" onclick="pleinEcranVideo('video4')">⛶</button>
+                        </div>
+                        <div class="strip-card">
+                            <video id="video5" controls><source src="projet5.mp4" type="video/mp4"></video>
+                            <button class="fullscreen-btn" onclick="pleinEcranVideo('video5')">⛶</button>
+                        </div>
+                        <div class="strip-card">
+                            <video id="video6" controls><source src="projet6.mp4" type="video/mp4"></video>
+                            <button class="fullscreen-btn" onclick="pleinEcranVideo('video6')">⛶</button>
+                        </div>
+                        <div class="strip-card">
+                            <video id="video7" controls><source src="projet7.mp4" type="video/mp4"></video>
+                            <button class="fullscreen-btn" onclick="pleinEcranVideo('video7')">⛶</button>
+                        </div>
+                    </div>
+                    <button class="arrow arrow-right" onclick="scrollStrip(1)">&#8250;</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+
+
+            function scrollStrip(dir) {
+                document.getElementById("maStrip").scrollBy({
+                left: dir * 300,
+                behavior: "smooth"
+                });
+            }
+
+            function pleinEcranVideo(id) {
+                let video = document.getElementById(id);
+                if (video.requestFullscreen) {
+                    video.requestFullscreen();
+                } else if (video.webkitRequestFullscreen) {
+                    video.webkitRequestFullscreen();
+                } else if (video.msRequestFullscreen) {
+                    video.msRequestFullscreen();
+                }
+            }
+
+            function pleinEcran() {
+                let img = document.getElementById("monImage");
+                if (img.requestFullscreen) {
+                    img.requestFullscreen();
+                } else if (img.webkitRequestFullscreen) {
+                    img.webkitRequestFullscreen();
+                } else if (img.msRequestFullscreen) {
+                    img.msRequestFullscreen();
+                }
+            }
+        </script>
     </body>
 </html>
